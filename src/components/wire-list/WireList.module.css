@@ -1,0 +1,12 @@
+.wireList {
+  grid-row: 3;
+
+  display: grid;
+  grid-template-columns: auto;
+  grid-row-gap: 1em;
+  justify-content: center;
+
+  list-style: none;
+
+  padding: 0;
+}

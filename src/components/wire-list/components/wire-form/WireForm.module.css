@@ -1,0 +1,7 @@
+.wireForm {
+  display: grid;
+  grid-template-columns: 8em 6em 2.25em;
+  column-gap: 2em;
+
+  width: max-content;
+}

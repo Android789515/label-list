@@ -1,0 +1,21 @@
+.downloadButton {
+  font-size: 1rem;
+  color: #fff;
+
+  justify-self: center;
+
+  order: 2;
+
+  cursor: pointer;
+
+  background: rgb(6, 177, 0);
+  padding: .3em .5em;
+
+  border: none;
+  border-radius: .125em;
+}
+
+.downloadButton:focus,
+.downloadButton:hover {
+  background: rgb(50, 194, 46);
+}

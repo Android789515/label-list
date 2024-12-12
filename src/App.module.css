@@ -1,0 +1,17 @@
+.app {
+  font-family: sans-serif;
+
+  min-height: 100vh;
+}
+
+.layout {
+  display: grid;
+  justify-content: center;
+  row-gap: 2em;
+}
+
+header {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: repeat(2, 1fr);
+}

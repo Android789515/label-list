@@ -1,0 +1,19 @@
+.addWireForm {
+  font-size: 1.2rem;
+  color: #fff;
+
+  justify-self: center;
+
+  cursor: pointer;
+
+  background: rgb(0, 162, 255);
+  padding: .3em .5em;
+
+  border: none;
+  border-radius: .125em;
+}
+
+.addWireForm:focus,
+.addWireForm:hover {
+  background: rgb(47, 178, 253);
+}

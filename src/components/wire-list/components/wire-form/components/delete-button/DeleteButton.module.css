@@ -1,0 +1,23 @@
+.deleteButton {
+  align-self: end;
+
+  cursor: pointer;
+
+  padding: .25em;
+  background: none;
+  border: none;
+
+  margin: 0;
+}
+
+.deleteButton:focus,
+.deleteButton:hover {
+  background: #eee;
+  border-radius: .25em;
+}
+
+img {
+  filter: invert(13%) sepia(81%) saturate(4244%) hue-rotate(352deg) brightness(109%) contrast(108%);
+
+  margin-bottom: -3px;
+}
