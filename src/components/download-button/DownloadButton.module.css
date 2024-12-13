@@ -1,5 +1,7 @@
 .downloadButton {
   font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
   color: #fff;
 
   justify-self: center;
@@ -13,6 +15,8 @@
 
   border: none;
   border-radius: .125em;
+
+  margin-bottom: 4px;
 }
 
 .downloadButton:focus,
