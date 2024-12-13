@@ -5,7 +5,7 @@ export const Title = () => {
     <h1
       className={styles.title}
     >
-      Make Some Wires!
+      Wire Labels!
     </h1>
   );
 };

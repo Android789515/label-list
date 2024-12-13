@@ -4,19 +4,17 @@
   text-decoration: none;
   color: #fff;
 
-  justify-self: center;
+  justify-self: end;
 
   order: 2;
 
   cursor: pointer;
 
   background: rgb(6, 177, 0);
-  padding: .3em .5em;
+  padding: .5em;
 
   border: none;
   border-radius: .125em;
-
-  margin-bottom: 4px;
 }
 
 .downloadButton:focus,
