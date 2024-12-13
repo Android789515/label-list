@@ -1,5 +1,12 @@
 .title {
-  font-size: 4rem;
+  font-size: 3rem;
+  text-align: center;
+}
 
-  grid-column: span 2;
+@media (min-width: 600px) {
+  .title {
+    font-size: 4rem;
+
+    grid-column: span 2;
+  }
 }
