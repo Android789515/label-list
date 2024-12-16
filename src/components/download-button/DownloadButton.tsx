@@ -1,9 +1,9 @@
-import { type WireData } from 'types';
+import { type WireLabels } from 'types';
 
 import styles from './DownloadButton.module.css';
 
 interface Props {
-  data: WireData[];
+  data: WireLabels[];
 }
 
 export const DownloadButton = ({ data }: Props) => {
