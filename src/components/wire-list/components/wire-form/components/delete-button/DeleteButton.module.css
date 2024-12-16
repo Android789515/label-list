@@ -1,4 +1,4 @@
-.deleteButton {
+.deleteButton.deleteButton {
   align-self: end;
 
   cursor: pointer;
@@ -10,8 +10,8 @@
   margin: 0;
 }
 
-.deleteButton:focus,
-.deleteButton:hover {
+.deleteButton.deleteButton:focus,
+.deleteButton.deleteButton:hover {
   background: #eee;
   border-radius: .25em;
 }
