@@ -19,7 +19,10 @@ export const AddWireLabelButton = ({ setWireLabels }: Props) => {
         ...prevData,
         {
           id: newUUID(),
-          label: predictNextLabel(prevData.at(-1)?.label || ''),
+          label: predictNextLabel(
+            prevData.at(-2)?.label || '',
+            prevData.at(-1)?.label || '',
+          ),
           amount: prevData.at(-1)?.amount || DEFAULT_LABEL_AMOUNT,
         },
       ];
