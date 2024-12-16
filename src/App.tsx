@@ -1,57 +1,17 @@
-import { type ChangeEvent, useState } from 'react';
-import { v4 as newUUID } from 'uuid';
+import { useState } from 'react';
 
-import { type WireData } from 'types';
-import { useShortcuts } from './useShortcuts';
-import { predictNextLabel } from './utils';
+import { type WireLabels } from 'types';
 
 import styles from './App.module.css';
 
-import { Title } from 'components/title';
-import { WireList, AddWireForm } from 'components/wire-list';
-import { DownloadButton } from 'components/download-button';
+import { Header } from 'components/header';
+import { AddWireLabelButton } from 'components/add-wire-label-button';
+import { AmountsForm } from 'components/amounts-form';
+import { WireList } from 'components/wire-list';
 import { ClearLabelsButton } from 'components/clear-labels-button';
 
 export const App = () => {
-  const DEFAULT_LABEL_AMOUNT = 2;
-
-  const [ wireForms, setWireForms ] = useState<WireData[]>([]);
-
-  const addNewWire = () => {
-    setWireForms(prevData => {
-      return [
-        ...prevData,
-        {
-          id: newUUID(),
-          label: predictNextLabel(prevData.at(-1)?.label || ''),
-          amount: prevData.at(-1)?.amount || DEFAULT_LABEL_AMOUNT,
-        },
-      ];
-    });
-  };
-
-  const removeWire = (wireToRemove: WireData) => {
-    setWireForms(prevForms => {
-      return prevForms.filter(form => form.id !== wireToRemove.id);
-    });
-  };
-
-  useShortcuts({
-    Enter: addNewWire,
-  });
-
-  const setAllAmounts = (event: ChangeEvent) => {
-    const amount = (event.target as HTMLInputElement).value!;
-
-    setWireForms(prevForms => {
-      return prevForms.map(form => {
-        return {
-          ...form,
-          amount: Number(amount),
-        }
-      });
-    });
-  };
+  const [ wireLabels, setWireLabels ] = useState<WireLabels[]>([]);
 
   return (
     <div
@@ -60,40 +20,26 @@ export const App = () => {
       <main
         className={styles.layout}
       >
-        <header>
-          <Title />
-
-          <DownloadButton
-            data={wireForms}
+        <Header
+          wireLabels={wireLabels}
+        >
+          <AddWireLabelButton
+            setWireLabels={setWireLabels}
           />
+        </Header>
 
-          <AddWireForm
-            addNewWire={addNewWire}
-          />
+        <AmountsForm
+          setWireLabels={setWireLabels}
+        />
 
-          <div className={styles.amounts}>
-            <label>
-              <span>
-                Set All Amounts
-              </span>
-              <input
-                type={'number'}
-                onChange={setAllAmounts}
-              />
-            </label>
-          </div>
-        </header>
-
-        {wireForms.length > 0 && (
-          <ClearLabelsButton
-            clearLabels={() => setWireForms([])}
-          />
-        )}
+        <ClearLabelsButton
+          hidden={!wireLabels.length}
+          setWireLabels={setWireLabels}
+        />
 
         <WireList
-          wireForms={wireForms}
-          setWireForms={setWireForms}
-          removeWire={removeWire}
+          wireLabels={wireLabels}
+          setWireLabels={setWireLabels}
         />
       </main>
     </div>

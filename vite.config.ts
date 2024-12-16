@@ -8,6 +8,7 @@ export default defineConfig({
   resolve: {
     alias: {
       'types': path.resolve(__dirname, './src/types.ts'),
+      'utils': path.resolve(__dirname, './src/utils.ts'),
       'components': path.resolve(__dirname, './src/components'),
     },
   },

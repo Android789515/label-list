@@ -1,5 +1,4 @@
 .wireList {
-  grid-row: 3;
   justify-self: end;
 
   display: grid;
@@ -12,4 +11,9 @@
   padding: 0;
 
   margin: 0;
+}
+
+@media (min-width: 600px) {
+  .wireList {
+  }
 }

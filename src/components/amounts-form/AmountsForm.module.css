@@ -1,0 +1,17 @@
+.amountsForm {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 1em;
+  align-items: center;
+
+  margin-bottom: 2em;
+}
+
+.text {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.input {
+  width: 8em;
+}

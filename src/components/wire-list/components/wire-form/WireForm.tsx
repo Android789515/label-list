@@ -1,6 +1,6 @@
-import { type Dispatch, type SetStateAction, ChangeEvent, useRef, useEffect } from 'react';
+import { ChangeEvent, useRef, useEffect } from 'react';
 
-import { type WireData } from 'types';
+import { type WireLabels, WireLabelsSetter } from 'types';
 
 import styles from './WireForm.module.css';
 
@@ -8,25 +8,25 @@ import { Label } from './components/label';
 import { DeleteButton } from './components/delete-button';
 
 interface Props {
-  formData: WireData;
-  setWireForms: Dispatch<SetStateAction<WireData[]>>;
-  removeWire: (wireToRemove: WireData) => void;
+  formData: WireLabels;
+  setWireLabels: WireLabelsSetter;
+  removeWire: (wireToRemove: WireLabels) => void;
 }
 
-export const WireForm = ({ formData, setWireForms, removeWire }: Props) => {
+export const WireForm = ({ formData, setWireLabels, removeWire }: Props) => {
   const handleForm = (event: ChangeEvent) => {
     const fieldChanged = event.target.parentElement!.firstChild!.textContent!.toLowerCase();
     const { value } = event.target as HTMLInputElement;
 
-    setWireForms(prevForms => {
-      return prevForms.map(form => {
-        if (form.id === formData.id) {
+    setWireLabels(prevLabels => {
+      return prevLabels.map(label => {
+        if (label.id === formData.id) {
           return {
-            ...form,
+            ...label,
             [fieldChanged]: value,
           };
         } else {
-          return form;
+          return label;
         }
       });
     });

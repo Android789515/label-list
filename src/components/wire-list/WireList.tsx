@@ -1,28 +1,31 @@
-import { type Dispatch, type SetStateAction } from 'react';
-
-import { type WireData } from 'types';
+import { type WireLabels, type WireLabelsSetter } from 'types';
 
 import styles from './WireList.module.css';
 
 import { WireForm } from './components/wire-form';
 
 interface Props {
-  wireForms: WireData[];
-  setWireForms: Dispatch<SetStateAction<WireData[]>>;
-  removeWire: (wireToRemove: WireData) => void;
+  wireLabels: WireLabels[];
+  setWireLabels: WireLabelsSetter;
 }
 
-export const WireList = ({ wireForms, setWireForms, removeWire }: Props) => {
+export const WireList = ({ wireLabels, setWireLabels }: Props) => {
+  const removeWire = (wireToRemove: WireLabels) => {
+    setWireLabels(prevForms => {
+      return prevForms.filter(form => form.id !== wireToRemove.id);
+    });
+  };
+
   return (
     <ul
       className={styles.wireList}
     >
-      {wireForms.map((form, key) => {
+      {wireLabels.map((label, key) => {
         return (
           <WireForm
             key={key}
-            formData={form}
-            setWireForms={setWireForms}
+            formData={label}
+            setWireLabels={setWireLabels}
             removeWire={removeWire}
           />
         );
