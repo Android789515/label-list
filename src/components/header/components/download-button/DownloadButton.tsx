@@ -12,7 +12,9 @@ interface Props {
 }
 
 export const DownloadButton = ({ data }: Props) => {
-  const labels = data.map(label => label.label).join('\n');
+  const labels = data.map(label => {
+    return [...Array(label.amount)].map(() => label.label).join('\n');
+  }).join('\n');
 
   const labelsFile = new File([labels], 'labels.txt', {
     type: 'text/plain',

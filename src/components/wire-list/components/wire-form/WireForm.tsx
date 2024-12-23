@@ -46,7 +46,7 @@ export const WireForm = ({ formData, setWireLabels, removeWire }: Props) => {
         if (label.id === formData.id) {
           return {
             ...label,
-            [fieldChanged]: value.split('~').join(''),
+            [fieldChanged]: fieldChanged === 'amount' ? Number(value) : value,
           };
         } else {
           return label;

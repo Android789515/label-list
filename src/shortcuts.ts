@@ -41,7 +41,6 @@ export const useShortcuts = create<ShortcutState>(set => {
 
 export const registerShortcuts = (shortcuts: Shortcut[]) => {
   const onShortcutPress = (event: KeyboardEvent) => {
-    console.log(event.key)
     shortcuts.forEach(({ key: shortcutKey, action }) => {
       const matchesShortcut = event.key === shortcutKey;
 
