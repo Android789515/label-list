@@ -5,7 +5,6 @@ import { useShortcuts } from '../../shortcuts';
 
 import styles from './ShortcutsLegend.module.css';
 
-import { ShowOrHideButton } from './components/show-or-hide-button';
 import { LegendTitle } from './components/legend-title';
 
 interface Props {
