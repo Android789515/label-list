@@ -1,14 +1,4 @@
-.button {
-  cursor: pointer;
-
-  background: none;
-  border: none;
-  padding: 0;
-
-  margin: 0;
-}
-
-.buttonWithText {
+.buttonWithText.buttonWithText {
   display: grid;
   grid-template-columns: max-content 2em;
   column-gap: 1em;

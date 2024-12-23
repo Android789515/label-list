@@ -16,7 +16,7 @@
   border-radius: .25em;
 }
 
-img {
+.deleteIcon.deleteIcon {
   filter: invert(13%) sepia(81%) saturate(4244%) hue-rotate(352deg) brightness(109%) contrast(108%);
 
   margin-bottom: -3px;

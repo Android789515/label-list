@@ -1,0 +1,9 @@
+.legendTitle {
+  font-size: 1.4rem;
+  text-align: center;
+
+  grid-column: span 3;
+
+  margin-top: .75em;
+  margin-bottom: 0;
+}

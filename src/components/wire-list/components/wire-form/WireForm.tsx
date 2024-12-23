@@ -1,6 +1,8 @@
 import { ChangeEvent, useRef, useEffect } from 'react';
+import { v4 as newUUID } from 'uuid';
 
 import { type WireLabels, WireLabelsSetter } from 'types';
+import { useShortcuts } from '../../../../shortcuts';
 
 import styles from './WireForm.module.css';
 
@@ -14,6 +16,27 @@ interface Props {
 }
 
 export const WireForm = ({ formData, setWireLabels, removeWire }: Props) => {
+  const shortcutRegistry = useShortcuts();
+
+  shortcutRegistry.registerShortcut({
+    id: newUUID(),
+    key: '~',
+    description: 'Remove the current wire label',
+    action: event => {
+      const labelTextField = event.target as HTMLInputElement;
+
+      const previousLabel = labelTextField.parentNode?.parentNode?.previousSibling as HTMLLIElement;
+
+      const deleteButtonForLabel = labelTextField.parentNode?.nextSibling?.nextSibling as HTMLButtonElement | null;
+
+      deleteButtonForLabel?.click();
+
+      const previousLabelTextField = previousLabel.firstChild?.firstChild?.nextSibling as HTMLInputElement | null;
+
+      previousLabelTextField?.focus();
+    },
+  });
+
   const handleForm = (event: ChangeEvent) => {
     const fieldChanged = event.target.parentElement!.firstChild!.textContent!.toLowerCase();
     const { value } = event.target as HTMLInputElement;
@@ -23,7 +46,7 @@ export const WireForm = ({ formData, setWireLabels, removeWire }: Props) => {
         if (label.id === formData.id) {
           return {
             ...label,
-            [fieldChanged]: value,
+            [fieldChanged]: value.split('~').join(''),
           };
         } else {
           return label;

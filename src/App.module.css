@@ -1,13 +1,15 @@
 .app {
   font-family: sans-serif;
 
+  display: grid;
+
   min-height: 100vh;
 }
 
 .layout {
   display: grid;
+  grid-template-rows: auto auto 1fr;
   justify-content: center;
-  row-gap: 2em;
 
   margin-top: 2em;
 }
@@ -16,6 +18,5 @@
   .layout {
     display: grid;
     justify-content: center;
-    row-gap: 2em;
   }
 }

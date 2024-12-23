@@ -1,4 +1,4 @@
-.addWireForm {
+.addWireForm.addWireForm {
   font-size: 1.2rem;
   color: #fff;
 
@@ -13,13 +13,13 @@
   border-radius: .125em;
 }
 
-.addWireForm:focus,
-.addWireForm:hover {
+.addWireForm.addWireForm:focus,
+.addWireForm.addWireForm:hover {
   background: rgb(47, 178, 253);
 }
 
 @media (min-width: 600px) {
-  .addWireForm {
+  .addWireForm.addWireForm {
     justify-self: start;
   }
 }

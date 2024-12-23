@@ -1,0 +1,87 @@
+.legend {
+  color: #fff;
+
+  position: fixed;
+  bottom: 0;
+
+  display: grid;
+  grid-template-rows: auto 2em;
+  grid-template-columns: minmax(1em, 1fr) 10fr minmax(1em, 1fr);
+  row-gap: 2em;
+
+  width: 100vw;
+
+  background: rgb(0, 162, 255);
+  padding: 1em 0;
+
+  translate: 0 4em;
+  transition: translate 250ms;
+}
+
+.legend:focus,
+.legend:hover {
+  grid-template-rows: auto auto;
+
+  outline: none;
+
+  translate: 0;
+}
+
+.shortcuts {
+  grid-row: 2;
+  grid-column: 2;
+  justify-self: center;
+
+  display: grid;
+  row-gap: 1em;
+
+  list-style: none;
+
+  padding: 0;
+
+  margin: 0;
+}
+
+.shortcut {
+  display: grid;
+  grid-template-rows: max-content;
+  grid-template-columns: 6.5em 1fr;
+  align-items: baseline;
+  column-gap: .5em;
+}
+
+.shortcutKeyBackground,
+.shortcutKey {
+  justify-self: start;
+
+  border-radius: .25em;
+}
+
+.shortcutKeyBackground {
+  background: #2c823e;
+}
+
+.shortcutKey {
+  font: inherit;
+  color: inherit;
+
+  display: inline-block;
+
+  cursor: pointer;
+
+  background: rgb(50, 194, 46);
+  padding: .25em .75em;
+  border: none;
+
+  translate: 0 -.2em;
+}
+
+.shortcutKey:active {
+  translate: 0 -.1em;
+}
+
+.shortcutDescription {
+  justify-self: end;
+
+  translate: 0 -.2em;
+}

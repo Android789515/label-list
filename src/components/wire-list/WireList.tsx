@@ -2,6 +2,7 @@ import { type WireLabels, type WireLabelsSetter } from 'types';
 
 import styles from './WireList.module.css';
 
+import { ClearLabelsButton } from 'components/clear-labels-button';
 import { WireForm } from './components/wire-form';
 
 interface Props {
@@ -17,19 +18,28 @@ export const WireList = ({ wireLabels, setWireLabels }: Props) => {
   };
 
   return (
-    <ul
+    <section
       className={styles.wireList}
     >
-      {wireLabels.map((label, key) => {
-        return (
-          <WireForm
-            key={key}
-            formData={label}
-            setWireLabels={setWireLabels}
-            removeWire={removeWire}
-          />
-        );
-      })}
-    </ul>
+      <ClearLabelsButton
+        hidden={!wireLabels.length}
+        setWireLabels={setWireLabels}
+      />
+
+        <ul
+          className={styles.wireListLayout}
+        >
+          {wireLabels.map((label, key) => {
+            return (
+              <WireForm
+                key={key}
+                formData={label}
+                setWireLabels={setWireLabels}
+                removeWire={removeWire}
+              />
+            );
+        })}
+      </ul>
+    </section>
   );
 };

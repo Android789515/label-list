@@ -1,5 +1,5 @@
-.downloadButton {
-  font-size: 1rem;
+.downloadButton.downloadButton {
+  font-size: 1.2rem;
   font-weight: 500;
   text-decoration: none;
   color: #fff;
@@ -9,19 +9,19 @@
   cursor: pointer;
 
   background: rgb(6, 177, 0);
-  padding: .5em;
+  padding: .3em .5em;
 
   border: none;
   border-radius: .125em;
 }
 
-.downloadButton:focus,
-.downloadButton:hover {
+.downloadButton.downloadButton:focus,
+.downloadButton.downloadButton:hover {
   background: rgb(50, 194, 46);
 }
 
 @media (min-width: 600px) {
-  .downloadButton {
+  .downloadButton.downloadButton {
     justify-self: end;
 
     order: 2;

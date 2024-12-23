@@ -1,6 +1,8 @@
 .wireList {
   justify-self: end;
+}
 
+.wireListLayout {
   display: grid;
   grid-template-columns: 1fr;
   grid-row-gap: 1em;
@@ -11,9 +13,4 @@
   padding: 0;
 
   margin: 0;
-}
-
-@media (min-width: 600px) {
-  .wireList {
-  }
 }

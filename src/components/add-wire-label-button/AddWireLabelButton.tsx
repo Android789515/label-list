@@ -2,9 +2,11 @@ import { v4 as newUUID } from 'uuid';
 
 import { type WireLabelsSetter } from 'types';
 import { predictNextLabel } from 'utils';
-import { useShortcuts } from '../../useShortcuts';
+import { useShortcuts } from '../../shortcuts';
 
 import styles from './AddWireLabelButton.module.css';
+
+import { Button } from 'components/button';
 
 interface Props {
   setWireLabels: WireLabelsSetter;
@@ -13,7 +15,7 @@ interface Props {
 export const AddWireLabelButton = ({ setWireLabels }: Props) => {
   const DEFAULT_LABEL_AMOUNT = 2;
 
-  const addNewWire = () => {
+  const addNewWireLabel = () => {
     setWireLabels(prevData => {
       return [
         ...prevData,
@@ -29,16 +31,22 @@ export const AddWireLabelButton = ({ setWireLabels }: Props) => {
     });
   };
 
-  useShortcuts({
-    Enter: addNewWire,
+  const shortcutRegistry = useShortcuts();
+
+  shortcutRegistry.registerShortcut({
+    id: newUUID(),
+    key: 'Enter',
+    description: 'Add a new wire label.',
+    action: addNewWireLabel,
   });
 
   return (
-    <button
-      className={styles.addWireForm}
-      onClick={addNewWire}
-    >
-      Add Wire
-    </button>
+    <Button
+      text={'Add Wire Label'}
+      customStyles={styles.addWireForm}
+      mouseEvents={{
+        onClick: addNewWireLabel,
+      }}
+    />
   );
 }

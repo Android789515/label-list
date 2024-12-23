@@ -15,7 +15,10 @@ export const DeleteButton = ({ onClick }: Props) => {
       name='Delete Label'
       icon={deleteIcon}
       buttonStyles={styles.deleteButton}
-      onClick={onClick}
+      iconStyles={styles.deleteIcon}
+      mouseEvents={{
+        onClick,
+      }}
     />
   );
 };

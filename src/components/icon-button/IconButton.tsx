@@ -1,6 +1,8 @@
-import { MouseEvent } from 'react';
+import { type MouseEvents } from 'types';
 
 import defaultStyles from './IconButtonDefaults.module.css';
+
+import { Button } from 'components/button';
 
 interface Props {
   name: string;
@@ -8,18 +10,18 @@ interface Props {
   icon: string;
   buttonStyles?: string;
   iconStyles?: string;
-  onClick: (event: MouseEvent) => void;
+  mouseEvents?: MouseEvents;
 }
 
-export const IconButton = ({ name, text, icon, buttonStyles, iconStyles, onClick }: Props) => {
+export const IconButton = ({ name, text, icon, buttonStyles, iconStyles, mouseEvents }: Props) => {
   return (
-    <button
-      className={`
-        ${defaultStyles.button}
+    <Button
+      text={''}
+      customStyles={`
         ${text && defaultStyles.buttonWithText}
         ${buttonStyles}
       `}
-      onClick={onClick}
+      mouseEvents={mouseEvents}
     >
       {text && (
         <span>
@@ -31,6 +33,6 @@ export const IconButton = ({ name, text, icon, buttonStyles, iconStyles, onClick
         alt={name}
         className={iconStyles}
       />
-    </button>
+    </Button>
   );
 };
