@@ -18,5 +18,5 @@ export interface Shortcut {
   id: UUID;
   key: string;
   description: string;
-  action: (event: KeyboardEvent) => void;
+  action: (event: KeyboardEvent | MouseEvent) => void;
 }

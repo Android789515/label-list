@@ -62,7 +62,7 @@ export const ShortcutsLegend = ({ shortcuts }: Props) => {
               >
                 <button
                   className={styles.shortcutKey}
-                  onClick={() => shortcut.action()}
+                  onClick={event => shortcut.action(event)}
                 >
                   {usesShift(shortcut.key) && 'Shift+'}
                   {shortcut.key === ' ' ? 'Space' : shortcut.key}
