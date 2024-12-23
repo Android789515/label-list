@@ -1,5 +1,7 @@
 .wireList {
   justify-self: end;
+
+  overflow: auto;
 }
 
 .wireListLayout {

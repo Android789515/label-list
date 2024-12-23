@@ -4,12 +4,17 @@
   display: grid;
 
   min-height: 100vh;
+  max-height: 100vh;
+
+  overflow: hidden;
 }
 
 .layout {
   display: grid;
-  grid-template-rows: auto auto 1fr;
+  grid-template-rows: max-content max-content 1fr 2em 6em;
   justify-content: center;
+
+  max-height: 100vh;
 
   margin-top: 2em;
 }

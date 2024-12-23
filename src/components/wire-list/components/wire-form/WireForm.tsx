@@ -21,7 +21,7 @@ export const WireForm = ({ formData, setWireLabels, removeWire }: Props) => {
   shortcutRegistry.registerShortcut({
     id: newUUID(),
     key: '~',
-    description: 'Remove the current wire label',
+    description: 'Remove the current wire label.',
     action: event => {
       const labelTextField = event.target as HTMLInputElement;
 
