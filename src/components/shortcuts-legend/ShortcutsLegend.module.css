@@ -2,29 +2,32 @@
   color: #fff;
 
   position: fixed;
+  left: 50%;
   bottom: 0;
 
   display: grid;
-  grid-template-rows: auto 2em;
+  grid-template-rows: auto auto;
   grid-template-columns: minmax(1em, 1fr) 10fr minmax(1em, 1fr);
   row-gap: 2em;
 
-  width: 100vw;
+  width: 50vw;
+  height: 3.5em;
+
+  overflow: hidden;
 
   background: rgb(0, 162, 255);
   padding: 1em 0;
+  border-radius: 1.5em;
 
-  translate: 0 4em;
-  transition: translate 250ms;
+  translate: -50% -1em;
+  transition: height 500ms;
 }
 
 .legend:focus,
 .legend:hover {
-  grid-template-rows: auto auto;
+  height: 24em;
 
   outline: none;
-
-  translate: 0;
 }
 
 .shortcuts {

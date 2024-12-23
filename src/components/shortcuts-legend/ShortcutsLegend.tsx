@@ -44,7 +44,7 @@ export const ShortcutsLegend = ({ shortcuts }: Props) => {
       id={legendRef}
       tabIndex={1}
     >
-      <ShowOrHideButton />
+      {/* <ShowOrHideButton /> */}
 
       <LegendTitle />
 
