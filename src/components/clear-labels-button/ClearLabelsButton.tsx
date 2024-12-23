@@ -19,7 +19,7 @@ export const ClearLabelsButton = ({ hidden, setWireLabels }: Props) => {
   shortcutRegistry.registerShortcut({
     id: newUUID(),
     key: 'C',
-    description: 'Clear all labels',
+    description: 'Clear all labels.',
     action: () => setWireLabels([]),
   });
 

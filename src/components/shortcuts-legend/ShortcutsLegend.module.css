@@ -10,7 +10,6 @@
   grid-template-columns: minmax(1em, 1fr) 10fr minmax(1em, 1fr);
   row-gap: 2em;
 
-  width: 50vw;
   height: 3.5em;
 
   overflow: hidden;
@@ -48,9 +47,9 @@
 .shortcut {
   display: grid;
   grid-template-rows: max-content;
-  grid-template-columns: 6.5em 1fr;
+  grid-template-columns: auto 1fr;
   align-items: baseline;
-  column-gap: .5em;
+  column-gap: 2em;
 }
 
 .shortcutKeyBackground,
@@ -84,7 +83,7 @@
 }
 
 .shortcutDescription {
-  justify-self: end;
+  text-align: end;
 
   translate: 0 -.2em;
 }

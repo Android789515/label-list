@@ -21,7 +21,7 @@ export const AmountsForm = ({ setWireLabels }: Props) => {
     shortcutRegistry.registerShortcut({
       id: newUUID(),
       key: 'Space',
-      description: 'Set all labels amounts',
+      description: 'Set all labels amounts.',
       action: () => {
         const amountsField = document.getElementById(amountsFieldRef) as HTMLInputElement;
   
