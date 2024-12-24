@@ -12,6 +12,7 @@
   grid-template-columns: minmax(1em, 1fr) 10fr minmax(1em, 1fr);
   row-gap: 2em;
 
+  width: max-content;
   height: 3.5em;
 
   overflow: hidden;
@@ -20,13 +21,15 @@
   padding: 1em 0;
   border-radius: 1.5em;
 
-  translate: -50% -1em;
+  margin-bottom: 1em;
+
+  translate: -50%;
   transition: height 500ms;
 }
 
 .legend:focus,
 .legend:hover {
-  height: 28em;
+  height: 22em;
 
   outline: none;
 }
